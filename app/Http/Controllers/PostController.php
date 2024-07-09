@@ -6,6 +6,7 @@ use App\Http\Requests\PostRequest;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
+use Illuminate\Support\Facades\Gate;
 
 class PostController extends Controller
 {
@@ -77,8 +78,10 @@ class PostController extends Controller
     public function edit(string $id)
     {
         $post = Post::find($id);
+        Gate::authorize('edit', $post);
         $categories = Category::all();
         $tags = Tag::all();
+
         return view('posts.edit', compact('post', 'categories', 'tags'));
     }
 
@@ -89,6 +92,7 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
 
+        Gate::authorize('update', $post);
         // Actualizar el post
         $post->update($request->validated() + [
             'user_id' => auth()->id(),

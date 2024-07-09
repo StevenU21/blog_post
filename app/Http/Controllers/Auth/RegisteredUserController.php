@@ -43,6 +43,8 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        return redirect(route('login'))->with('warning', 'Por favor, verifique su dirección de correo.');
+        Auth::login($user);
+
+        return redirect(route('dashboard', absolute: false));
     }
 }
