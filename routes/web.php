@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TagController;
@@ -11,24 +12,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::prefix('/profile')->group(function () {
         Route::get('/', [ProfileController::class, 'index'])->name('profile.index');
         Route::get('/edit', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/update', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/destroy', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    });
-
-    Route::prefix('/ejemplo')->group(function () {
-        Route::get('/index', fn () => view('examples.ejemplo.index'))->name('ejemplo.index');
-        Route::get('/create', fn () => view('examples.ejemplo.create'))->name('ejemplo.create');
-        Route::get('/edit', fn () => view('examples.ejemplo.edit'))->name('ejemplo.edit');
-        Route::get('/show', fn () => view('examples.ejemplo.show'))->name('ejemplo.show');
     });
 
     Route::prefix('/categories')->group(function () {
@@ -68,12 +61,6 @@ Route::middleware('auth')->group(function () {
         Route::put('/{id}/update', [CommentController::class, 'update'])->name('comments.update');
         Route::delete('/{id}/destroy', [CommentController::class, 'destroy'])->name('comments.destroy');
     });
-
-    //rutas de posts de tipo resource
-    // Route::resource('/posts', PostController::class);
-    // Route::resource('/categories', CategoryController::class);
-    // Route::resource('/tags', TagController::class);
-    // Route::resource('/comments', CommentController::class)->except(['index', 'create', 'show']);
 });
 
 

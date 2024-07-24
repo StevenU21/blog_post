@@ -44,6 +44,4 @@
 </div>
 
 {{-- paginacion --}}
-
-
 @include('components.comments.js')

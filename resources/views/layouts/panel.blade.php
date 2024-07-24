@@ -92,56 +92,67 @@
                             <div class="row">
                                 <div class="col-xl-3 col-lg-6">
                                     <div class="card card-stats mb-4 mb-xl-0">
-                                        <div class="card-body">
+                                        <a href="{{ route('categories.index') }}" class="card-body">
                                             <div class="row">
                                                 <div class="col">
-                                                    <h5 class="card-title text-uppercase text-muted mb-0">Dato 1</h5>
-                                                    <span class="h2 font-weight-bold mb-0">Ejemplo</span>
+                                                    <h5 class="card-title text-uppercase text-muted mb-0">Categorias
+                                                    </h5>
+                                                    <span class="h2 font-weight-bold mb-0">
+                                                        {{ $categories_count }}
+                                                    </span>
                                                 </div>
                                                 <div class="col-auto">
                                                     <div
                                                         class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                                                        <i class="fas fa-chart-bar"></i>
+                                                        <i class="fas fa-layer-group"></i>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-6">
                                     <div class="card card-stats mb-4 mb-xl-0">
-                                        <div class="card-body">
+                                        <a href="{{ route('tags.index') }}" class="card-body" >
                                             <div class="row">
                                                 <div class="col">
-                                                    <h5 class="card-title text-uppercase text-muted mb-0">Dato 2</h5>
-                                                    <span class="h2 font-weight-bold mb-0">Ejemplo</span>
+                                                    <h5 class="card-title text-uppercase text-muted mb-0">
+                                                        Etiquetas
+                                                    </h5>
+                                                    <span class="h2 font-weight-bold mb-0">
+                                                        {{ $tags_count }}
+                                                    </span>
                                                 </div>
                                                 <div class="col-auto">
                                                     <div
                                                         class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                                                        <i class="fas fa-chart-pie"></i>
+                                                        <i class="fas fa-tags"></i>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-6">
                                     <div class="card card-stats mb-4 mb-xl-0">
-                                        <div class="card-body">
+                                        <a href="{{ route('posts.index') }}" class="card-body">
                                             <div class="row">
                                                 <div class="col">
-                                                    <h5 class="card-title text-uppercase text-muted mb-0">Dato 3</h5>
-                                                    <span class="h2 font-weight-bold mb-0">Ejemplo</span>
+                                                    <h5 class="card-title text-uppercase text-muted mb-0">
+                                                        Posts
+                                                    </h5>
+                                                    <span class="h2 font-weight-bold mb-0">
+                                                        {{ $posts_count }}
+                                                    </span>
                                                 </div>
                                                 <div class="col-auto">
                                                     <div
                                                         class="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                                                        <i class="fas fa-users"></i>
+                                                        <i class="fas fa-book"></i>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-6">
@@ -149,13 +160,15 @@
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col">
-                                                    <h5 class="card-title text-uppercase text-muted mb-0">Dato 4</h5>
-                                                    <span class="h2 font-weight-bold mb-0">Ejemplo</span>
+                                                    <h5 class="card-title text-uppercase text-muted mb-0">Usuarios</h5>
+                                                    <span class="h2 font-weight-bold mb-0">
+                                                        {{ $users_count }}
+                                                    </span>
                                                 </div>
                                                 <div class="col-auto">
                                                     <div
                                                         class="icon icon-shape bg-info text-white rounded-circle shadow">
-                                                        <i class="fas fa-percent"></i>
+                                                        <i class="fas fa-user-friends"></i>
                                                     </div>
                                                 </div>
                                             </div>
