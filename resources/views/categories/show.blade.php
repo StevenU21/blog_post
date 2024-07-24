@@ -9,10 +9,7 @@
                     <div class="col-8">
                         <h3 class="mb-0"><i class="fas fa-newspaper"></i> Ver Categoria</h3>
                     </div>
-                    <div class="col-4 text-right">
-                        <a href="{{ route('categories.index') }}" class="btn btn-sm btn-primary"><i class="fas fa-list"></i>
-                            Volver</a>
-                    </div>
+                    @livewire('category.form-navigation')
                 </div>
             </div>
             <div class="card-body">
